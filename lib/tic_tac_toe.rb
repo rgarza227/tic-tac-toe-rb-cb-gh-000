@@ -151,5 +151,7 @@ def play(board)
     puts "Congradulations, #{winner(board)} wins!"
   elsif draw?(board)
     puts "Cat's Game!"
+  else
+    nil
   end
 end
