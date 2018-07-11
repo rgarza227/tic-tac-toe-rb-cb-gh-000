@@ -59,29 +59,29 @@ def turn(board)
   if valid_move(board, index)
     move(board,index, "X")
   else
-
     puts "Try Again!"
     turn(board)
-
   end
 end
 
 def turn_count(board)
-  count = 0
-  board.each do |i|
-    if i == "X" || i == "O"
-      count+=1
+  turn_counter  = 0
+  board.each do |position|
+    if position != " "
+      turn_counter += 1
     end
   end
-  count
+turn_counter
 end
 
 def current_player(board)
-  if turn_count(board).is_odd?
-    "X"
+
+  if turn_count(board).even?
+    turn = "X"
   else
-    "O"
+    turn = "O"
   end
+turn
 end
 
 def won?(board)
